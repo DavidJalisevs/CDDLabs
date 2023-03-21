@@ -1,35 +1,48 @@
 #include "Barrier.h"
+#include "Event.h"
 #include <iostream>
 #include <thread>
 #include <vector>
 
 
 static const int num_threads = 100;
-int sharedVariable=0;
+const int size=20;
 
 
-/*! \fn barrierTask
-    \brief An example of using a reusable barrier
+/*! \fn producer
+    \brief Creates events and adds them to buffer
 */
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
-void barrierTask(std::shared_ptr<Barrier> theBarrier, int numLoops){
+
+void producer(std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> theBuffer, int numLoops){
 
   for(int i=0;i<numLoops;++i){
-    //Do first bit of task
-    std::cout << "A"<< i;
-    //Barrier
-    theBarrier.wait();
-    //Do second half of task
-    std::cout<< "B" << i;
+    //Produce event and add to buffer
+    Event e= createEvent(i);
+    theBuffer.put(e);
   }
   
 
 }
 
+/*! \fn consumer
+    \brief Takes events from buffer and consumes them
+*/
+
+void consumer(std::shared_ptr<SafeBuffer<std::shared_ptr Event>> theBuffer, int numLoops){
+
+  for(int i=0;i<numLoops;++i){
+    //Produce event and add to buffer
+    std::shared_ptr<Event> e= theBuffer->get();
+    e->consume();
+  }
+  
+
+}
 
 int main(void){
+
   std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<Barrier> aBarrier( new Barrier(num_threads));
+  std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> aBuffer( new Buffer<shared_ptr Event>(size));
   /**< Launch the threads  */
   int i=0;
   for(std::thread& t: vt){
