@@ -1,35 +1,44 @@
 #Name: Davids Jalisevs
 #Date: 31/03/2023
 #License: GNU General Public License 3.0
-# buld file name 
-TARGET_EXEC := producer_consumer
 
-CC=g++
-CFLAGS= -std=c++11 -pthread
+#Define the compiler and compiler flags
+CXX = g++
+CXXFLAGS = -std=c++11 -pthread
 
-#every .o file depends on .cpp file with the same name
+#Define the target executable
+TARGET_EXEC = producer
+
+#Define the source and object files
+SRCS = SafeBuffer.cpp Semaphore.cpp main.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+#Define phony targets
+.PHONY: all debug clean doc
+
+#Default target: build the executable
+all: $(TARGET_EXEC)
+
+$(TARGET_EXEC): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
+
+#build the executable with debugging symbols and flags
+debug: CXXFLAGS += -DDEBUG -Wall -g
+debug: all
+
+#compile object files
 %.o: %.cpp
-		$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# link .o and compile them with make
-ALL: SafeBuffer.o Semaphore.o main.o 
-		$(CC) -o ${TARGET_EXEC} SafeBuffer.o Semaphore.o main.o $(CFLAGS) $(DEBUGFLAGS)
+#remove all object files and the executable
+clean:
+	rm -f $(OBJS) $(TARGET_EXEC)
 
-#-g is enabling debbuging mode
-DEBUG: DEBUGFLAGS = -DDEBUG -Wall
-DEBUG: ALL
+#generate documentation using Doxygen
+doc:
+	doxygen
 
-.PHONY: doc CLEAN
-
-doc: 
-
-		rm -rf doc/
-		doxygen
-
-#this is customary and just deletes all .o files
-CLEAN:
-		rm *.o
-
-#-c generates object code for seperae files
-# clean is cleaning the whole thing after
-
+#Dependencies
+SafeBuffer.o: SafeBuffer.h
+Semaphore.o: Semaphore.h
+main.o: SafeBuffer.h Semaphore.h

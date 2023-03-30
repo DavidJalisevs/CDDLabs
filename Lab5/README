@@ -6,7 +6,7 @@ Adamn Mcguigan helped me to set up the safebuffer and semaphore
 
 1. GNU public license 3.0
 2. Davids Jalisevs 
-3. Download from github, run the make file if needed and then in terminal run 
+3. Download from github, run the make file if needed and then run ./producer
 ./producer_consumer
 4. You need C++,
 5. - TO DO nothing
@@ -19,4 +19,5 @@ Adamn Mcguigan helped me to set up the safebuffer and semaphore
 	safeBuffer - this is a thread safe buffer, needs semaphore class
 	Readme - contains all the info about the lab
 	Semaphore.cpp .h - semaphore file for signaling
+	producer - run this file to run the whole thing. exe
 7. Any other relevent information - 
