@@ -1,3 +1,13 @@
+// Name: Davids Jalisev
+// Date: 31/03/2023
+// Licence: GNU Public v3.0
+
+
+
+
+
+
+
 /* SafeBuffer.h --- 
  * 
  * Filename: SafeBuffer.h
@@ -44,6 +54,19 @@
 
 /* Code: */
 
+#pragma once 
+#include "semaphore.h"
+#include "Event.h"
+
+class SafeBuffer
+{
+    std::mutex mutexx;
+
+    public:
+    void consume();
+    void put(Event event);
+
+};
 
 
 /* SafeBuffer.h ends here */

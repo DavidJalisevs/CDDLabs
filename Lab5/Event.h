@@ -1,3 +1,11 @@
+// Name: Davids Jalisev
+// Date: 31/03/2023
+// Licence: GNU Public v3.0
+
+
+
+
+
 /* Event.h --- 
  * 
  * Filename: Event.h
@@ -43,7 +51,14 @@
  */
 
 /* Code: */
-
-
+#pragma once
+#include <iostream>
+class Event
+{
+    int number;
+    public:
+    void createEvent();
+    void cosume();
+};
 
 /* Event.h ends here */

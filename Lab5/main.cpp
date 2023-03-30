@@ -1,8 +1,27 @@
-#include "Barrier.h"
+// Name: Davids Jalisev
+// Date: 31/03/2023
+// Licence: GNU Public v3.0
+
+
+
+
+
 #include "Event.h"
+#include "SafeBuffer.h"
 #include <iostream>
 #include <thread>
 #include <vector>
+
+
+#include <condition_variable>// Name: Davids Jalisev
+// Date: 31/03/2023
+// Licence: GNU Public v3.0
+
+
+
+
+
+
 
 
 static const int num_threads = 100;
@@ -13,7 +32,7 @@ const int size=20;
     \brief Creates events and adds them to buffer
 */
 
-void producer(std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> theBuffer, int numLoops){
+void producer(std::shared_ptr<SafeBuffer<std::shared_ptr<Event>>> theBuffer, int numLoops){
 
   for(int i=0;i<numLoops;++i){
     //Produce event and add to buffer
@@ -39,7 +58,8 @@ void consumer(std::shared_ptr<SafeBuffer<std::shared_ptr Event>> theBuffer, int 
 
 }
 
-int main(void){
+int main(void)
+{
 
   std::vector<std::thread> vt(num_threads);
   std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> aBuffer( new Buffer<shared_ptr Event>(size));

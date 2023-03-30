@@ -1,3 +1,11 @@
+// Name: Davids Jalisev
+// Date: 31/03/2023
+// Licence: GNU Public v3.0
+
+
+
+
+
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H 
 #include <mutex>
