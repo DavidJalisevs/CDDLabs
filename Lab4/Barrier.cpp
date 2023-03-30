@@ -1,3 +1,8 @@
+//Name; Davids Jalisevs
+//Date: 30/03/2023
+//Licence: GNU license 3.0
+
+
 // Barrier.cpp --- 
 // 
 // Filename: Barrier.cpp
@@ -46,6 +51,16 @@
 // Code:
 #include "Semaphore.h"
 #include "Barrier.h"
+
+Barrier::Barrier(int t_numThreads)
+{
+    numThreads = t_numThreads;
+}
+
+void Barrier::wait()
+{
+    
+}
 
 
 // 

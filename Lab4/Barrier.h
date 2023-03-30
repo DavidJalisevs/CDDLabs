@@ -1,3 +1,7 @@
+//Name; Davids Jalisevs
+//Date: 30/03/2023
+//Licence: GNU license 3.0
+
 /* Barrier.h --- Barrier.h
  * 
  * Filename: Barrier.h
@@ -48,7 +52,7 @@ class Barrier{
   int numThreads;
  public:
   Barrier(int numThreads);
-  virtual ~Barrier();
+  virtual ~Barrier(){};
   void wait();  
 };
 

@@ -15,4 +15,6 @@ It should contain information on
 	main,out - is being ran after make file to demo the finished product
 	Readme - contains all the info about the lab
 	Semaphore.cpp .h - semaphore file for signaling
+	Barrier.h - is a header of a barrier
+	Barrier.cpp - Barrier functions 
 7. Any other relevent information - 
