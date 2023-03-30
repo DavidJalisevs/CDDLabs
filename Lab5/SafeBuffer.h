@@ -58,14 +58,28 @@
 #include "semaphore.h"
 #include "Event.h"
 
+
+#include <vector>
+#include "Semaphore.h"
+/*!
+* \brief A thread-safe buffer
+*/
+template<typename T>
 class SafeBuffer
 {
-    std::mutex mutexx;
-
     public:
-    void consume();
-    void put(Event event);
+        SafeBuffer(int t_size);
+        void put(T item);
 
+        T get();
+
+    private:
+        int size;
+        std::vector<char> m_buffer;
+
+        Semaphore m_mutex;
+        Semaphore m_spaces;
+        Semaphore m_items;
 };
 
 

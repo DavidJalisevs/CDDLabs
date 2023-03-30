@@ -1,9 +1,13 @@
 The README file is a text filw that explains what a project is.
 It should contain information on
 
+-----
+Adamn Mcguigan helped me to set up the safebuffer and semaphore
+
 1. GNU public license 3.0
 2. Davids Jalisevs 
-3. Download from github, run the make file if needed and then in terminal run ./main.out
+3. Download from github, run the make file if needed and then in terminal run 
+./producer_consumer
 4. You need C++,
 5. - TO DO nothing
 6. List of files and what they contain
@@ -12,7 +16,7 @@ It should contain information on
 	Doxyfile - Doxygen
 	main.cpp - contains main 
 	makefile - is created to demonstrate the lab
-	main,out - is being ran after make file to demo the finished product
+	safeBuffer - this is a thread safe buffer, needs semaphore class
 	Readme - contains all the info about the lab
 	Semaphore.cpp .h - semaphore file for signaling
 7. Any other relevent information - 

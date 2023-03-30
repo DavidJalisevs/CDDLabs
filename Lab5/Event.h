@@ -55,10 +55,10 @@
 #include <iostream>
 class Event
 {
-    int number;
-    public:
-    void createEvent();
-    void cosume();
+int number;
+ public:
+    void createEvent(int t_number){this->number = t_number;std::cout<<"Created " << number << std::endl;};
+    void consumeEvent(){std::cout << "Consumed " << number << std::endl;};
 };
 
 /* Event.h ends here */
