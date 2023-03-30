@@ -1,10 +1,18 @@
-The README file is a text file that explains what a project is.
+The README file is a text filw that explains what a project is.
 It should contain information on
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
+1. GNU public license 3.0
+2. Davids Jalisevs 
+3. Download from github, run the make file if needed and then in terminal run ./main.out
+4. You need C++,
+5. - TO DO nothing
 6. List of files and what they contain
-7. Any other relevent information
+	html - Doxygen files
+	latex - Doxygen files
+	Doxyfile - Doxygen
+	main.cpp - contains main 
+	makefile - is created to demonstrate the lab
+	main,out - is being ran after make file to demo the finished product
+	Readme - contains all the info about the lab
+	Semaphore.cpp .h - semaphore file for signaling
+7. Any other relevent information - 

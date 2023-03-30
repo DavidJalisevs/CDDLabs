@@ -3,7 +3,7 @@ It should contain information on
 
 1. GNU public license 3.0
 2. Davids Jalisevs 
-3. Download from github, run the make file
+3. Download from github, run the make file if needed then run the ./signal.out file
 4. You need C++,
 5. - TO DO section listing items that need to be completed (errors, missing features etc.)
 6. List of files and what they contain

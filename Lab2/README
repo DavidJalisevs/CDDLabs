@@ -3,7 +3,7 @@ It should contain information on
 
 1. GNU public license 3.0
 2. Davids Jalisevs 
-3. Download from github, run the make file
+3. Download from github, run the make file if needed, then run ./main.out to see results
 4. You need C++,
 5. - TO DO section listing items that need to be completed (errors, missing features etc.)
 6. List of files and what they contain
@@ -14,5 +14,5 @@ It should contain information on
 	makefile - is ran to demonstrate the lab
 	Readme - contains all the info about the lab
 	Semaphore.cpp .h - semaphore file for signaling
-	signal.out - created file by the makefile  
+	main.out - created file by the makefile running, is executred to show final work
 7. Any other relevent information

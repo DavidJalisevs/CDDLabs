@@ -3,16 +3,16 @@ It should contain information on
 
 1. GNU public license 3.0
 2. Davids Jalisevs 
-3. Download from github, run the make file
+3. Download from github, run the make file if needed and then in terminal run ./main.out
 4. You need C++,
-5. - TO DO section listing items that need to be completed (errors, missing features etc.)
+5. - TO DO nothing
 6. List of files and what they contain
 	html - Doxygen files
 	latex - Doxygen files
 	Doxyfile - Doxygen
 	main.cpp - contains main 
-	makefile - is ran to demonstrate the lab
+	makefile - is created to demonstrate the lab
+	main,out - is being ran after make file to demo the finished product
 	Readme - contains all the info about the lab
 	Semaphore.cpp .h - semaphore file for signaling
-	signal.out - created file by the makefile  
-7. Any other relevent information
+7. Any other relevent information - 
